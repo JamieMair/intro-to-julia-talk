@@ -23,7 +23,7 @@ end
 function walk1D(T)
     x = 0
     for _ in 1:T
-        x = rand() < 0.5 ? 1 : -1
+        x += rand() < 0.5 ? 1 : -1
     end
     return x
 end
