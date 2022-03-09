@@ -56,7 +56,7 @@ def benchmark_1D_walk_in_parallel(n, T, repeats=30):
     times = []
     for _ in range(repeats):
         start_time = time.perf_counter_ns()
-        run_walk_in_parallel(n, T, 16)
+        run_walk_in_parallel(n, T, 32)
         end_time = time.perf_counter_ns()
         times.append(end_time - start_time)
     return times

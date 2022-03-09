@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <chrono>
 #include <algorithm>
+#include <climits>
 
 void create_random_walk(int* positions, int N, int T)
 {
