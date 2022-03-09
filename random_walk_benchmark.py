@@ -1,7 +1,7 @@
 import random
 import time
 import numpy as np
-from multiprocessing import Pool
+
 
 def create_random_walk(positions, T):
     for i in range(len(positions)):
@@ -40,6 +40,8 @@ def benchmark_create_random_walk_with_numpy(n, T, repeats=100):
         times.append(end_time - start_time)
     return times
 
+
+from multiprocessing import Pool
 def walk1D(T):
     x = 0
     for _ in range(T):
@@ -51,6 +53,8 @@ def run_walk_in_parallel(N, T, num_processes):
     with Pool(num_processes) as pool:
         positions = pool.map(walk1D, [T for _ in range(N)])
     return None
+
+
 
 def benchmark_1D_walk_in_parallel(n, T, repeats=30):
     times = []
