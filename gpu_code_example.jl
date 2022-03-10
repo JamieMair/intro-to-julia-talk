@@ -20,12 +20,17 @@ end
 # positions = zeros(10^6);
 # cache = similar(positions);
 # generate_random_walks!(positions, cache, 20)
-# histogram(positions)
 
-
+# using CUDA # supplies cu function
 # positions_gpu = cu(zeros(10^6));
 # cache_gpu = similar(positions_gpu);
 # generate_random_walks!(positions_gpu, cache_gpu, 20)
+
+
+# histogram(positions)
+
+
+
 # histogram(Array(positions_gpu))
 
 function time_function(fn, params...; repeats = 5)
