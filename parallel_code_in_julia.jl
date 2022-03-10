@@ -14,5 +14,7 @@ end
 
 # using BenchmarkTools;
 # positions = zeros(Int, 64);
-# T = 10^6;
+# T = 10^7;
 # @btime create_random_walk!(positions, T);
+# @benchmark create_random_walk!(positions, T)
+# Threads.nthreads()
