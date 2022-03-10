@@ -14,8 +14,10 @@ myfunc = py"myfunc"
 
 myfunc(10.0)
 
+# Add python packages to the Python env
+Conda.add("scipy")
 
-# Conda.add("scipy")
-# Call Python functions from inside Julia, even with Julia functions as arguments
+# Call Python functions from inside Julia,
+# even with Julia functions as arguments
 optim = pyimport("scipy.optimize")
 optim.newton(x -> cos(x) - x, 1)

@@ -10,6 +10,10 @@ ClusterManagers.addprocs_slurm(
     exeflags=["--project=."]
 )
 
+# Activate the current Julia environment
+@everywhere using Pkg;
+@everywhere Pkg.activate(".")
+@everywhere using BenchmarkTools;
 
 # Gives all workers access to the source code (walk1D function)
 @everywhere include("parallel_code_in_julia.jl") 
